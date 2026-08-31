@@ -1,28 +1,32 @@
+#! usr/bin/env python3
 import inventario as inv
 
 precio_final = 0
 lista_productos = []
 
-def busqueda (precio_final, lista_productos):
-    start = input("Desea empezar a comprar? (si/no): ")
-    while start.lower() == "si":
-        nombre = input("Ingrese el nombre del producto: ").lower()
-        cantidad = int(input("Ingrese la cantidad: "))
-        
-        if inv.existe_producto(nombre):
-            info_producto = inv.mostrar_inventario(nombre)
-            precio_unitario = info_producto["precio"]
-            precio_total = precio_unitario * cantidad
-            precio_final += precio_total
-            lista_productos.append((nombre))
-            print(f"Producto agregado: {nombre}")
-        else:
-            print("El producto no existe en el inventario.")
-        
-        start = input("Desea agregar otro producto? (si/no): ")
-    print (f"La lista de compras es: {lista_productos}\n")
-    print (f"El precio final es: {precio_final:.2f}")
+def buscar (nombre, cantidad, lista_productos, precio_acumulado):
+    """
+    Recibe el estado actual de la compra y un producto nuevo a agregar.
+    No usa input() ni print() - solo procesa y regresa resultados.
+    """
+
+    nombre = nombre.lower().strip()
     
+    if not nombre:
+        return lista_productos, precio_acumulado, "Ingrese un nombre de producto"
+    
+    if not inv.existe_producto(nombre):
+        return lista_productos, precio_acumulado, f"'{nombre}' no existe en el inventario"
+    
+    info_producto = inv.mostrar_inventario(nombre)
+    precio_total = info_producto["precio"] * cantidad
+    nuevo_precio_acumulado = precio_acumulado + precio_total
+    lista_productos.append(nombre)
+    
+    mensaje = f"Agregado: {nombre} x{cantidad} (${precio_total:.2f})"
+    return lista_productos, nuevo_precio_acumulado, mensaje
+
+
 def pago (precio_final):
     while precio_final > 0:
         cobro = float(input("ingrese el dinero del pago: "))
@@ -38,5 +42,5 @@ def pago (precio_final):
         else:
             print ("Gracias por venir")
             break
-
-busqueda(precio_final, lista_productos)
+    else:
+        print ("Pudrase pues")
