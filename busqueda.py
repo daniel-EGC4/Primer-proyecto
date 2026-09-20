@@ -4,15 +4,40 @@ precio_final = 0
 lista_productos = []
 
 def busqueda (precio_final, lista_productos):
+
+    #Sistema de menú
+    while True:
+        menu = input("Quiere ver el menú? (si/no): ")
+        if menu.lower() == "si":
+            print (f"Producto\t", end="\t")
+            print ("Precio\t", end = "\t")
+            print ("cantidad")
+            for i in range (50):
+                print ("-", end="")
+            print ()
+            for producto, datos in inv.inventario.items ():
+                print(f"{producto:<20}| {datos['precio']:>8}\t| {datos['cantidad']:>10}")
+            break
+        elif menu.lower() == "no":
+            break
+        else:
+            print ("Por favor, rellene correctamente el campo")
+
+    #Sistema de compras
     start = input("Desea empezar a comprar? (si/no): ")
     while start.lower() == "si":
         nombre = input("Ingrese el nombre del producto: ").lower()
         cantidad = int(input("Ingrese la cantidad: "))
-        
+
+        #Busquedas de productos
         if inv.existe_producto(nombre):
+            #se extrae el producto y todos los datos de el
             info_producto = inv.mostrar_inventario(nombre)
+            #se extrae el precio unitario de cada producto
             precio_unitario = info_producto["precio"]
+            #se consigue el precio total multiplicando el precio de cada producto por la cantidad que se va a comprar
             precio_total = precio_unitario * cantidad
+            #Se suma el precio final por el precio final de los productos introducidos, informaicón extraida en la linea anterior
             precio_final += precio_total
             lista_productos.append((nombre))
             print(f"Producto agregado: {nombre}")
@@ -20,8 +45,9 @@ def busqueda (precio_final, lista_productos):
             print("El producto no existe en el inventario.")
         
         start = input("Desea agregar otro producto? (si/no): ")
-    print (f"La lista de compras es: {lista_productos}\n")
-    print (f"El precio final es: {precio_final:.2f}")
+        if start.lower() == "no":
+            print (f"La lista de compras es: {lista_productos}\n")
+            print (f"El precio final es: {precio_final:.2f}")
     
 def pago (precio_final):
     while precio_final > 0:
