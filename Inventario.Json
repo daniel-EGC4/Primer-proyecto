@@ -1,0 +1,58 @@
+{
+    "ruffles": {
+        "cantidad": 50,
+        "precio": 31.50
+    },
+    "doritos": {
+        "cantidad": 30,
+        "precio": 32
+    },
+    "sabritas": {
+        "cantidad" : 30,
+        "precio": 31
+    },
+    "runners" : {
+        "cantidad" : 30,
+        "precio": 35.5
+    },
+    "leche entera": {
+        "cantidad": 25,
+        "precio": 27.0
+    },
+    "huevo blanco": {
+        "cantidad": 15,
+        "precio": 54.0
+    },
+    "frijol negro": {
+        "cantidad": 40,
+        "precio": 38.5
+    },
+    "arroz": {
+        "cantidad": 35,
+        "precio": 22.0
+    },
+    "aceite vegetal": {
+        "cantidad": 20,
+        "precio": 45.0
+    },
+    "pan de caja blanco": {
+        "cantidad": 18,
+        "precio": 48.5
+    },
+    "refresco cola": {
+        "cantidad": 50,
+        "precio": 18.0
+    },
+    "atun en agua": {
+        "cantidad": 60,
+        "precio": 19.5
+    },
+    "jabón de tocador": {
+        "cantidad": 32,
+        "precio": 16.0
+    },
+    "papel de baño": {
+        "cantidad": 20,
+        "precio": 42.50
+    }
+}

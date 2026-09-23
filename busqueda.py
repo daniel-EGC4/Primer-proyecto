@@ -1,10 +1,10 @@
 import inventario as inv
 
-precio_final = 0
+
 lista_productos = []
 
-def busqueda (precio_final, lista_productos):
-
+def busqueda (lista_productos):
+    precio_final = 0
     #Sistema de menú
     while True:
         menu = input("Quiere ver el menú? (si/no): ")
@@ -43,12 +43,15 @@ def busqueda (precio_final, lista_productos):
             print(f"Producto agregado: {nombre}")
         else:
             print("El producto no existe en el inventario.")
-        
+
+        menu = input("desea volver a ver el menu? (si/no)")
         start = input("Desea agregar otro producto? (si/no): ")
         if start.lower() == "no":
-            print (f"La lista de compras es: {lista_productos}\n")
-            print (f"El precio final es: {precio_final:.2f}")
-    
+            break
+    print (f"La lista de compras es: {lista_productos}\n")
+    print (f"El precio final es: {precio_final:.2f}")
+    return precio_final
+
 def pago (precio_final):
     while precio_final > 0:
         cobro = float(input("ingrese el dinero del pago: "))
@@ -65,4 +68,5 @@ def pago (precio_final):
             print ("Gracias por venir")
             break
 
-busqueda(precio_final, lista_productos)
+total = busqueda(lista_productos)
+pago (total)
