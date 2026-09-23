@@ -3,34 +3,11 @@ import inventario as inv
 
 lista_productos = []
 
-def busqueda (lista_productos):
+def busqueda (start, lista_productos):
     precio_final = 0
 
     #Sistema de menú
-    while True:
-        menu = input("Quiere ver el menú? (si/no): ")
 
-        if menu.lower() == "si":
-            
-            print (f"Producto\t", end="\t")
-            print ("Precio\t", end = "\t")
-            print ("cantidad")
-            for i in range (50):
-                print ("-", end="")
-            print ()
-            for producto, datos in inv.inventario.items ():
-                print(f"{producto:<20}| {datos['precio']:>8}\t| {datos['cantidad']:>10}")
-            break
-        elif menu.lower() == "no":
-            break
-        else:
-            print ("Por favor, rellene correctamente el campo")
-
-    #Sistema de compras
-    if menu == "si":
-        start = "si"
-    else:
-        start = input("Desea empezar a comprar? (si/no): ")
     while start.lower() == "si":
         nombre = input("Ingrese el nombre del producto: ").lower()
         cantidad = int(input("Ingrese la cantidad: "))
@@ -73,5 +50,24 @@ def pago (precio_final):
             print ("Gracias por venir")
             break
 
-total = busqueda(lista_productos)
+def menu():
+    menu = input("Quiere ver el menú? (si/no): ")
+    if menu.lower() == "si":
+        print (f"Producto\t", end="\t")
+        print ("Precio\t", end = "\t")
+        print ("cantidad")
+        for i in range (50):
+            print ("-", end="")
+        print ()
+        for producto, datos in inv.inventario.items ():
+            print(f"{producto:<20}| {datos['precio']:>8}\t| {datos['cantidad']:>10}")
+        start = "si"
+    elif menu.lower():
+        start = input("Desea empezar a comprar? (si/no): ")
+    else:
+        print ("Por favor, rellene correctamente el campo")
+    return start
+
+
+total = busqueda(menu(), lista_productos)
 pago (total)
