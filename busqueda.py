@@ -5,10 +5,13 @@ lista_productos = []
 
 def busqueda (lista_productos):
     precio_final = 0
+
     #Sistema de menú
     while True:
         menu = input("Quiere ver el menú? (si/no): ")
+
         if menu.lower() == "si":
+            
             print (f"Producto\t", end="\t")
             print ("Precio\t", end = "\t")
             print ("cantidad")
@@ -24,7 +27,10 @@ def busqueda (lista_productos):
             print ("Por favor, rellene correctamente el campo")
 
     #Sistema de compras
-    start = input("Desea empezar a comprar? (si/no): ")
+    if menu == "si":
+        start = "si"
+    else:
+        start = input("Desea empezar a comprar? (si/no): ")
     while start.lower() == "si":
         nombre = input("Ingrese el nombre del producto: ").lower()
         cantidad = int(input("Ingrese la cantidad: "))
@@ -43,8 +49,7 @@ def busqueda (lista_productos):
             print(f"Producto agregado: {nombre}")
         else:
             print("El producto no existe en el inventario.")
-
-        menu = input("desea volver a ver el menu? (si/no)")
+        
         start = input("Desea agregar otro producto? (si/no): ")
         if start.lower() == "no":
             break
