@@ -30,4 +30,4 @@ def vender (nombre, cantidad_vendida):
     if inventario[nombre]["cantidad"] < cantidad_vendida:
         return False
     inventario[nombre]["cantidad"] -= cantidad_vendida
-    return True
+    return True 

@@ -1,58 +1,72 @@
 {
-    "ruffles": {
-        "cantidad": 50,
-        "precio": 31.50
-    },
-    "doritos": {
-        "cantidad": 30,
-        "precio": 32
-    },
-    "sabritas": {
-        "cantidad" : 30,
-        "precio": 31
-    },
-    "runners" : {
-        "cantidad" : 30,
-        "precio": 35.5
-    },
-    "leche entera": {
-        "cantidad": 25,
-        "precio": 27.0
-    },
-    "huevo blanco": {
-        "cantidad": 15,
-        "precio": 54.0
-    },
-    "frijol negro": {
-        "cantidad": 40,
-        "precio": 38.5
-    },
-    "arroz": {
-        "cantidad": 35,
-        "precio": 22.0
-    },
-    "aceite vegetal": {
-        "cantidad": 20,
-        "precio": 45.0
-    },
-    "pan de caja blanco": {
-        "cantidad": 18,
-        "precio": 48.5
-    },
-    "refresco cola": {
-        "cantidad": 50,
-        "precio": 18.0
-    },
-    "atun en agua": {
-        "cantidad": 60,
-        "precio": 19.5
-    },
-    "jabón de tocador": {
-        "cantidad": 32,
-        "precio": 16.0
-    },
-    "papel de baño": {
-        "cantidad": 20,
-        "precio": 42.50
-    }
+  "1": {
+    "nombre": "Agua embotellada 600 ml",
+    "cantidad": 50,
+    "precio": 31.50
+  },
+  "2": {
+    "nombre": "Galletas de avena (Paquete 250 g)",
+    "cantidad": 30,
+    "precio": 32.00
+  },
+  "3": {
+    "nombre": "Salsa de tomate (Tetrapack 210 g)",
+    "cantidad": 30,
+    "precio": 31.00
+  },
+  "4": {
+    "nombre": "Runners (Bolsa 280 g)",
+    "cantidad": 30,
+    "precio": 35.50
+  },
+  "5": {
+    "nombre": "Leche entera (Cartón 1 L)",
+    "cantidad": 25,
+    "precio": 27.00
+  },
+  "6": {
+    "nombre": "Huevo blanco (Cono 12 pzas)",
+    "cantidad": 15,
+    "precio": 54.00
+  },
+  "7": {
+    "nombre": "Frijol negro (Bolsa 900 g)",
+    "cantidad": 40,
+    "precio": 38.50
+  },
+  "8": {
+    "nombre": "Arroz (Bolsa 1 kg)",
+    "cantidad": 35,
+    "precio": 22.00
+  },
+  "9": {
+    "nombre": "Aceite vegetal (Botella 800 ml)",
+    "cantidad": 20,
+    "precio": 45.00
+  },
+  "10": {
+    "nombre": "Pan de caja blanco (Bolsa 680 g)",
+    "cantidad": 18,
+    "precio": 48.50
+  },
+  "11": {
+    "nombre": "Refresco cola (Lata 355 ml)",
+    "cantidad": 50,
+    "precio": 18.00
+  },
+  "12": {
+    "nombre": "Atún en agua (Lata 140 g)",
+    "cantidad": 60,
+    "precio": 19.50
+  },
+  "13": {
+    "nombre": "Jabón de tocador (Barra 150 g)",
+    "cantidad": 32,
+    "precio": 16.00
+  },
+  "14": {
+    "nombre": "Papel de baño (Paquete 4 rollos)",
+    "cantidad": 20,
+    "precio": 42.50
+  }
 }
