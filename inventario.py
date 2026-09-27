@@ -9,25 +9,25 @@ with open (ruta_json, "r", encoding="utf-8") as archivo:
     inventario = json.load (archivo)
 
 
-def mostrar_inventario(nombre):
-    return inventario.get(nombre)
+def mostrar_inventario(ID):
+    return inventario.get(ID)
 
-def existe_producto(nombre):
-    return nombre in inventario
+def existe_producto(ID):
+    return ID in inventario
 
-def agregar_producto(nombre, cantidad, precio):
-    inventario[nombre] = { "cantidad": cantidad, "precio": precio }
+def agregar_producto(ID, nombre,cantidad, precio):
+    inventario[ID] = { "nombre" : nombre, "cantidad": cantidad, "precio": precio }
 
-def actualizar_cantidad (nombre, cantidad_nueva):
-    if existe_producto(nombre):
-        inventario[nombre]["cantidad"] = cantidad_nueva
+def actualizar_cantidad (ID, cantidad_nueva):
+    if existe_producto(ID):
+        inventario[ID]["cantidad"] = cantidad_nueva
         return True
     return False
 
-def vender (nombre, cantidad_vendida):
-    if not existe_producto(nombre):
+def vender (ID, cantidad_vendida):
+    if not existe_producto(ID):
         return False
-    if inventario[nombre]["cantidad"] < cantidad_vendida:
+    if inventario[ID]["cantidad"] < cantidad_vendida:
         return False
-    inventario[nombre]["cantidad"] -= cantidad_vendida
-    return True 
+    inventario[ID]["cantidad"] -= cantidad_vendida
+    return True

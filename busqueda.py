@@ -5,7 +5,7 @@ def menu():
     if respuesta_menu.lower() == "si":
         print(f"{'ID':<5}| {'Producto':<35}| {'Precio':>10} | {'Cantidad':>9}")
         print("-" * 75)
-        for ID, datos in inventario.items():
+        for ID, datos in inv.inventario.items():
             print(f"{ID:<5}| {datos['nombre']:<35}| {datos['precio']:>8}\t| {datos['cantidad']:>5}")
         start = "si"
     elif respuesta_menu.lower() == "no":
